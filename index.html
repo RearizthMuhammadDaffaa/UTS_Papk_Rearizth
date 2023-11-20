@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <meta name="theme-color" content="#009578"/>
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <meta name="description" content="App Grosir Sembako Rearizth">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    <title>Rearizth Grosir</title>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light ">
+      <div class="container d-flex justify-content-center">
+        <a class="navbar-brand" href="#">
+          Grosir Rearizth
+        </a>
+        <div class="cart-icon" onclick="toggleCart()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+          </svg>
+          <span id="cart-length">0</span>
+        </div>
+       
+      </div>
+    </nav>
+
+
+   
+    
+    <div class="container-sm mt-5" id="container">
+      <form id="form-beli">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="Nama" class="form-control" id="nama" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="alamat" class="form-label">Alamat</label>
+          <input type="text" class="form-control" id="alamat">
+        </div>
+        <button type="submit" class="btn btn-primary" >Beli</button>
+      </form>
+      <!-- <div class="row">
+        <div class="col-8 col mt-3">
+  
+          <select class="form-select" aria-label="Default select example" id="filterKategori">
+            <option value="All" selected>Filter by</option>
+            <option value="Bahan Makanan">Bahan Makanan</option>
+            <option value="Minuman">Minuman</option>
+          </select>
+        </div>
+      </div> -->
+      <div class="row d-flex justify-center" id="card-product">
+        <h3 class="text-center">sembako</h3>
+        
+      
+      </div>
+
+      <div class="row mt-5" id="row-customer">
+          <h3 class="text-center mt-4">Pembeli</h3>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+            <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="nama-edit" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama-edit" placeholder="Masukkan nama baru anda">
+            </div>
+            <div class="mb-3">
+              <label for="alamat-edit" class="form-label">alamat</label>
+              <input type="text" class="form-control" id="alamat-edit" placeholder="Masukkan Alamat Baru anda">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="edit-btn" data-bs-dismiss="modal">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidecart bg-dark text-center">
+  
+      <ul class="nav flex-column" id="list-cart">
+        <div class="text-light h4 m-0 px-4 text-center">
+           Keranjang
+          <div class="d-inline" onclick="toggleCart()" ><i class="far text-success float-right fa-arrow-alt-circle-right mt-1"></i></div>
+        </div>       
+        
+       
+      </ul>
+      <div class="text-light h6 text-left mx-3">Total Harga : <span class="text-success" id="sidecart-total-products">Rp 0</span></div>
+      <button id="close-cart">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

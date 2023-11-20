@@ -169,7 +169,7 @@ formBeli.addEventListener('submit',(e)=>{
 
 const rowCostumer = document.getElementById("row-customer");
 function displayCustomer(){
- 
+ rowCostumer.innerHTML = ""
   let cardCustomer = ""
   if(costumer.length > 0){
     costumer.map((item,index)=>{
@@ -203,7 +203,7 @@ function displayCustomer(){
   costumer[index].nama = namaEdit;
   costumer[index].alamat = alamatEdit;
   
-
+  displayCustomer();
   
 })
       

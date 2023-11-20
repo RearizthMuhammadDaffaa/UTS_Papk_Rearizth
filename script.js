@@ -195,17 +195,7 @@ function displayCustomer(){
       `
       rowCostumer.innerHTML += cardCustomer;
 
-      const editBtn = document.getElementById("edit-btn");
-   editBtn.addEventListener('click',(e)=>{
-  const namaEdit = document.getElementById('nama-edit').value;
-  const alamatEdit = document.getElementById('alamat-edit').value;
-  const btnClose = document.getElementById('btn-close');
-  costumer[index].nama = namaEdit;
-  costumer[index].alamat = alamatEdit;
-  
-  displayCustomer();
-  
-})
+   
       
      
     })
@@ -227,8 +217,21 @@ function saveEdit(index){
   const alamatEdit = document.getElementById('alamat-edit');
   namaEdit.value = costumer[index].nama;
   alamatEdit.value = costumer[index].alamat;
-  
+  console.log(index);
+  console.log(costumer[index].nama);
+  const editBtn = document.getElementById("edit-btn");
+editBtn.addEventListener('click',()=>{
+const namaEdit = document.getElementById('nama-edit').value;
+const alamatEdit = document.getElementById('alamat-edit').value;
+costumer[index].nama = namaEdit;
+costumer[index].alamat = alamatEdit;
+console.log(costumer[index].nama);
+
+displayCustomer();
+
+})
 }
+
 
 
 function toggleCart(){

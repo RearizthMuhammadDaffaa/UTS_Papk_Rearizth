@@ -216,7 +216,7 @@ editBtn.addEventListener("click", (e) => {
   const alamatEdit = document.getElementById("alamat-edit");
  
 
- 
+ console.log(inputID.value);
   
     costumer[inputID.value].nama = namaEdit.value;
     costumer[inputID.value].alamat = alamatEdit.value;
